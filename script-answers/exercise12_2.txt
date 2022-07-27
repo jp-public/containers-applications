@@ -1,0 +1,14 @@
+Script started on 2022-07-27 21:15:25+0300
+]0;root@MUSCLEFIT: /mnt/c/Users/juhop/Desktop/containers-applicationsroot@MUSCLEFIT:/mnt/c/Users/juhop/Desktop/containers-applications# docker container run -it ubuntu bash
+[?2004h]0;root@d874e69fe3d1: /root@d874e69fe3d1:/# 
+[K]0;root@d874e69fe3d1: /root@d874e69fe3d1:/# [7mmkdir -p /usr/src/app[27mmkdir -p /usr/src/app
+[?2004l
+[?2004h]0;root@d874e69fe3d1: /root@d874e69fe3d1:/# [7mtouch /usr/src/app/index.js[27mtouch /usr/src/app/index.js
+[?2004l
+[?2004h]0;root@d874e69fe3d1: /root@d874e69fe3d1:/# [K[7mexit[27mexit
+[?2004l
+exit
+]0;root@MUSCLEFIT: /mnt/c/Users/juhop/Desktop/containers-applicationsroot@MUSCLEFIT:/mnt/c/Users/juhop/Desktop/containers-applications# exit
+exit
+
+Script done on 2022-07-27 21:15:56+0300
