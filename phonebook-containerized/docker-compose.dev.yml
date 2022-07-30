@@ -7,7 +7,7 @@ services:
     environment:
       - REACT_APP_BACKEND_URL=/api/
     volumes:
-      - ./frontend/:/usr/src/app
+      - ./frontend:/usr/src/app
     ports:
       - 3000:3000
 
@@ -19,7 +19,7 @@ services:
     environment:
       - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
     volumes:
-      - ./backend/:/usr/src/app
+      - ./backend:/usr/src/app
     ports:
       - 3001:3001
     depends_on:
