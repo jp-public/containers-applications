@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
-const Person = require('./models/person')
+const { Person } = require('./mongo')
 
 const app = express()
 
@@ -30,7 +30,7 @@ app.get('/info', (request, response, next) => {
     .catch((error) => next(error))
 })
 
-app.get('/api/persons', (request, response, next) => {
+app.get('/persons', (request, response, next) => {
   Person.find({})
     .then((persons) => {
       response.json(persons)
@@ -38,7 +38,7 @@ app.get('/api/persons', (request, response, next) => {
     .catch((error) => next(error))
 })
 
-app.get('/api/persons/:id', (request, response, next) => {
+app.get('/persons/:id', (request, response, next) => {
   Person.findById(request.params.id)
     .then((person) => {
       if (person) {
@@ -50,7 +50,7 @@ app.get('/api/persons/:id', (request, response, next) => {
     .catch((error) => next(error))
 })
 
-app.delete('/api/persons/:id', (request, response, next) => {
+app.delete('/persons/:id', (request, response, next) => {
   Person.findByIdAndRemove(request.params.id)
     .then(() => {
       response.status(204).end()
@@ -60,7 +60,7 @@ app.delete('/api/persons/:id', (request, response, next) => {
 
 const randomId = () => Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)
 
-app.post('/api/persons', (request, response, next) => {
+app.post('/persons', (request, response, next) => {
   const body = request.body
 
   const person = new Person({
@@ -77,7 +77,7 @@ app.post('/api/persons', (request, response, next) => {
     .catch((error) => next(error))
 })
 
-app.put('/api/persons/:id', (request, response, next) => {
+app.put('/persons/:id', (request, response, next) => {
   const { name, number } = request.body
 
   Person.findByIdAndUpdate(

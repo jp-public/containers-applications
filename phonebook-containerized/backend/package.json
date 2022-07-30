@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon --legacy-watch i index.js",
+    "dev": "nodemon --legacy-watch --watch index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "git add . && git commit -m uibuild && git push heroku master",
     "logs:prod": "heroku logs --tail",
