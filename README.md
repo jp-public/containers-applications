@@ -1,3 +1,3 @@
 # Full Stack open containers
 
-This repository is used for the containers module of the Full stack open course
+This module is about using docker to create immutable execution environments for our Node.js and React projects.
